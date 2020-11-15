@@ -89,7 +89,7 @@ public:
 		}
 	}
 	void Animar_escenario(Graphics^ g) {
-		//mi_escenario->mostrar_muros(g, img_muro);
+		mi_escenario->mostrar_muros(g, img_muro);
 		mi_escenario->mostrar_celdas(g, img_camino);
 	}
 	void Animar_personajes(Graphics^ g) {

@@ -99,8 +99,7 @@ namespace MenuPrincipal {
 #pragma endregion
 	private: System::Void Animacion(System::Object^ sender, System::EventArgs^ e) {
 
-		//bf->Render();
-		//this->mi_escenario->mostrar_muros(bf->Graphics, this->img_muro);//
+
 		buffer->Graphics->Clear(Color::White);
 		buffer_escenario->Graphics->Clear(Color::White);
 		NovoJogo->Animar_escenario(buffer_escenario->Graphics);
