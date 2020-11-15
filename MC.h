@@ -1,6 +1,6 @@
 #pragma once
 #include "Ente.h"
-
+#include "CEscenario.h"
 enum Direcciones
 {
 	DispararArriba,
@@ -33,9 +33,10 @@ enum Direcciones
 
 class MC :public Ente{
 	Direcciones accion;
+	int x_matriz, y_matriz;
 public:
 	MC(Bitmap^ img) {
-		x = 28 ;
+		x = 34 ;
 		y = 30 ;
 		dx = dy = 0;
 		ancho = img->Width / 13;
@@ -53,6 +54,7 @@ public:
 	void dibujar(Graphics^ g, Bitmap^ img) override {
 		RECTANGULO corte = RECTANGULO(IDx * ancho, accion * alto, ancho, alto);
 		RECTANGULO decremento = RECTANGULO(x, y, ancho * 0.6, alto * 0.6);
+		//probar|^
 		//RECTANGULO hitbox = RECTANGULO( x + (ancho*0.5) / 2, y + (alto * 0.5) / 2, ancho, alto);
 		//g->DrawImage(img, AreaActual(), corte, GraphicsUnit::Pixel);
 		g->DrawImage(img, decremento, corte, GraphicsUnit::Pixel);
@@ -68,6 +70,17 @@ public:
 
 		this->EjecutarAccion();
 
+	}
+	void get_pos_matriz(CEscenario^ escenario) {
+		x_matriz = this->HitBox().X;
+		y_matriz = this->HitBox().Y;
+		escenario->determinar_ubicacion_personaje(x_matriz, y_matriz);
+	}
+	int get_x_matriz() {
+		return this->x_matriz;
+	}
+	int get_y_matriz() {
+		return this->y_matriz;
 	}
 private:
 	void EjecutarAccion() {

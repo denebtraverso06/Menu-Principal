@@ -22,9 +22,6 @@
     <Filter Include="Archivos de encabezado\Clases Padre">
       <UniqueIdentifier>{ec385d2a-5173-4161-b488-8febfa54bb12}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Todavia no se xd">
-      <UniqueIdentifier>{8f1c32e2-56f1-4b13-9131-da623ab7ddfb}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -69,7 +66,7 @@
       <Filter>Archivos de encabezado\Clases Padre</Filter>
     </ClInclude>
     <ClInclude Include="CEscenario.h">
-      <Filter>Todavia no se xd</Filter>
+      <Filter>Archivos de encabezado\Controladora</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

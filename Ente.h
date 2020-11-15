@@ -53,7 +53,7 @@ public:
 	}
 	RECTANGULO HitBox()
 	{
-		double escala = 0.36;
+		double escala = 0.20;
 
 		int ancho = this->ancho * escala;
 		int alto = this->alto * escala;

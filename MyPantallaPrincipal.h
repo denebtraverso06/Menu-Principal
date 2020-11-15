@@ -234,10 +234,8 @@ private: System::Void iniciar_juego_Click(System::Object^ sender, System::EventA
 	private: System::Void btn_start_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 		MyJuego^ Juego = gcnew MyJuego();
-		//Application::Run(Juego);
 		Juego->ShowDialog();
 		this->Close();
-		
 	}
 };
 }

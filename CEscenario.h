@@ -15,8 +15,9 @@ using namespace System::Collections::Generic;
 #define height 25
 #define M_size 23
 #define m_size 11
-
-ref class CGrafico{
+#define celda_width 32
+#define celda_height 30
+ref class CGrafico {
 protected:
 	RECTANGULO area_dibujo;
 	int x, y, dx, dy;
@@ -26,10 +27,10 @@ public:
 	}
 	virtual void dibujar(Graphics^ g, Bitmap^ img) {}
 	int get_x() {
-		return x;
+		return area_dibujo.X;
 	}
 	int get_y() {
-		return y;
+		return area_dibujo.Y;
 	}
 	void set_x(int x) {
 		this->x = x;
@@ -52,6 +53,9 @@ public:
 	CCelda(RECTANGULO area_dibujo) : CGrafico(area_dibujo) {}
 	void dibujar(Graphics^ g, Bitmap^ imagen) override {
 		g->DrawImage(imagen, this->area_dibujo);
+	}
+	bool contiene_a_un_personaje(int x, int y) {
+		return (this->area_dibujo.Contains(x, y));
 	}
 };
 
@@ -317,8 +321,16 @@ public:
 			muros[i]->dibujar(g, img);
 		}
 	}
-	void colison_enemigo() {
-
+	void determinar_ubicacion_personaje(int& x, int& y) {
+		int x1 = x;
+		int y1 = y;
+		for (int i = 0; i < celdas_libres.Count; ++i) {
+			if (celdas_libres[i]->contiene_a_un_personaje(x1, y1)) {
+				x = celdas_libres[i]->get_x() / celda_width;
+				y = celdas_libres[i]->get_y() / celda_height;
+				break;
+			}
+		}
 	}
 	void mostrar_celdas(Graphics^ g, Bitmap^ img) {
 		for (int i = 0; i < celdas_libres.Count; ++i) {
