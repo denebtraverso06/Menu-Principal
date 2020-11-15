@@ -51,6 +51,16 @@ public:
 	RECTANGULO NextArea() {
 		return RECTANGULO(x + dx, y + dy, ancho, alto);
 	}
+	RECTANGULO HitBox()
+	{
+		double escala = 0.36;
+
+		int ancho = this->ancho * escala;
+		int alto = this->alto * escala;
+
+
+		return RECTANGULO(x + ancho / 2, y + alto / 2, ancho, alto);
+	}
 	bool Colision(RECTANGULO obj) {
 		if (NextArea().IntersectsWith(obj))
 			return true;

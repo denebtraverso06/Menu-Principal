@@ -35,7 +35,8 @@ class MC :public Ente{
 	Direcciones accion;
 public:
 	MC(Bitmap^ img) {
-		x = y = 200;
+		x = 30 ;
+		y = 30 ;
 		dx = dy = 0;
 		ancho = img->Width / 13;
 		alto = img->Height / 21;
@@ -51,7 +52,13 @@ public:
 	}
 	void dibujar(Graphics^ g, Bitmap^ img) override {
 		RECTANGULO corte = RECTANGULO(IDx * ancho, accion * alto, ancho, alto);
-		g->DrawImage(img, AreaActual(), corte, GraphicsUnit::Pixel);
+		RECTANGULO decremento = RECTANGULO(x, y, ancho * 0.6, alto * 0.6);
+		//RECTANGULO hitbox = RECTANGULO( x + (ancho*0.5) / 2, y + (alto * 0.5) / 2, ancho, alto);
+		//g->DrawImage(img, AreaActual(), corte, GraphicsUnit::Pixel);
+		g->DrawImage(img, decremento, corte, GraphicsUnit::Pixel);
+		g->DrawRectangle(Pens::Black, decremento);
+		g->DrawRectangle(Pens::Red, HitBox());
+		//g->DrawRectangle(Pens::Black, AreaActual());
 	}
 	void Movimiento(Graphics^ g)override { //falta Mundo^ mundo
 		if (x + dx >= 0 && x + dx + ancho < g->VisibleClipBounds.Width)

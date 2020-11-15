@@ -4,18 +4,38 @@
 #include "Aliado.h"
 #include "Ente.h"
 #include "Asesino.h"
+#include "CEscenario.h"
+#include "Movil.h"
 
 ref class Controladora{
 	MC* jugador;
+	CEscenario^ mi_escenario;
+	CCaminos* caminos;
+	CEnemigo* enemigo;
 
 	Bitmap^ imgJugador;
+	Bitmap^ img_muro;
+	Bitmap^ img_camino;
+	Bitmap^ img_enemigo;
+
 public:
 	Controladora(Graphics^ g) {
 		this->imgJugador = gcnew Bitmap("imagenes\\mc.png");
 		this->jugador = new MC(imgJugador);
+	/*	this->enemigo = new CEnemigo(caminos, 31, 31, 25, 25, 21, 13, 10);
+		this->img_enemigo = gcnew Bitmap("imagenes\\corrupt.png");*/
+		
+		/*this->caminos = new CCaminos;
+		this->mi_escenario = gcnew CEscenario(caminos);
+		this->img_muro = gcnew Bitmap("imagenes\\muro_juego.png");
+		this->img_camino = gcnew Bitmap("imagenes\\newcamino.png");
+		this->img_enemigo = gcnew Bitmap("imagenes\\corrupt.png");*/
 	}
 	~Controladora() {
-		delete this->jugador;
+		delete this->jugador, this->imgJugador,
+			this->enemigo, this->img_enemigo,
+			this->caminos, this->img_camino,
+			this->img_muro, this->mi_escenario;
 	}
 	void MoverJugador(bool accion, Keys key)
 	{
@@ -55,8 +75,14 @@ public:
 		}
 	}
 	void Animar(Graphics^ g) {
-		jugador->dibujar(g, imgJugador);
+
+		//mi_escenario->mostrar_muros(g, img_muro);
+		//mi_escenario->mostrar_celdas(g, img_camino);
+		/*enemigo->animar(g, img_enemigo);*/
+		//this->enemigo->dibujar_meta(g);
+		//this->enemigo->animar(g, this->img_enemigo);
 		jugador->Movimiento(g);
+		jugador->dibujar(g, imgJugador);
 
 	}
 };

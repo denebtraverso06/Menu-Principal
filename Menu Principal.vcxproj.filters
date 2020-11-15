@@ -19,8 +19,11 @@
     <Filter Include="Archivos de encabezado\Controladora">
       <UniqueIdentifier>{f59f0b8d-2c04-4b17-ae06-1841a4bf03d0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\Ente %28Clase Padre%29">
+    <Filter Include="Archivos de encabezado\Clases Padre">
       <UniqueIdentifier>{ec385d2a-5173-4161-b488-8febfa54bb12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Todavia no se xd">
+      <UniqueIdentifier>{8f1c32e2-56f1-4b13-9131-da623ab7ddfb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -57,10 +60,16 @@
       <Filter>Archivos de encabezado\Characters</Filter>
     </ClInclude>
     <ClInclude Include="Ente.h">
-      <Filter>Archivos de encabezado\Ente %28Clase Padre%29</Filter>
+      <Filter>Archivos de encabezado\Clases Padre</Filter>
     </ClInclude>
     <ClInclude Include="Controladora.h">
       <Filter>Archivos de encabezado\Controladora</Filter>
+    </ClInclude>
+    <ClInclude Include="Movil.h">
+      <Filter>Archivos de encabezado\Clases Padre</Filter>
+    </ClInclude>
+    <ClInclude Include="CEscenario.h">
+      <Filter>Todavia no se xd</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +89,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Controladora.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="CEscenario.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

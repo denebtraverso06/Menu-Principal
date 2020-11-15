@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClInclude Include="Aliado.h" />
     <ClInclude Include="Asesino.h" />
+    <ClInclude Include="CEscenario.h" />
     <ClInclude Include="Controladora.h" />
     <ClInclude Include="Corrupto.h" />
     <ClInclude Include="Ente.h" />
     <ClInclude Include="MC.h" />
     <ClInclude Include="MenuCreditos.h" />
+    <ClInclude Include="Movil.h" />
     <ClInclude Include="MyJuego.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -145,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CEscenario.cpp" />
     <ClCompile Include="Controladora.cpp" />
     <ClCompile Include="Menu Principal.cpp" />
     <ClCompile Include="MyJuego.cpp" />
