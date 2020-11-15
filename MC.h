@@ -35,7 +35,7 @@ class MC :public Ente{
 	Direcciones accion;
 public:
 	MC(Bitmap^ img) {
-		x = 30 ;
+		x = 28 ;
 		y = 30 ;
 		dx = dy = 0;
 		ancho = img->Width / 13;
