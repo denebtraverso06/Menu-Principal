@@ -90,7 +90,6 @@ namespace MenuPrincipal {
 			this->Name = L"MyJuego";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyJuego";
-			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyJuego::MyJuego_KeyDown);
 			this->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &MyJuego::MyJuego_KeyUp);
 			this->ResumeLayout(false);
@@ -99,13 +98,13 @@ namespace MenuPrincipal {
 #pragma endregion
 	private: System::Void Animacion(System::Object^ sender, System::EventArgs^ e) {
 
-
 		buffer->Graphics->Clear(Color::White);
 		buffer_escenario->Graphics->Clear(Color::White);
 		NovoJogo->Animar_escenario(buffer_escenario->Graphics);
 		buffer_escenario->Render();
 		NovoJogo->Animar_personajes(buffer->Graphics);
 		buffer->Render();
+
 	}
 	private: System::Void MyJuego_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 		NovoJogo->MoverJugador(false, e->KeyCode);
